@@ -1,0 +1,17 @@
+# Core dependencies for train_baseline.py and train_ctc.py
+tensorflow>=2.15,<2.19
+# Standalone legacy Keras 2 package. Both training scripts build/save with
+# this (via `import tf_keras as keras`) instead of the `tf.keras` bundled in
+# TensorFlow 2.16+ (which is Keras 3) — see the comment at the top of
+# train_baseline.py for why: Keras 3's model_config JSON shape isn't
+# understood by the tfjs-layers JS deserializer used in the browser.
+tf_keras>=2.15,<2.19
+opencv-python>=4.5.5
+numpy>=1.24,<2.0
+matplotlib>=3.5.0
+scikit-learn>=1.0.0
+
+# Only needed for scripts/convert_to_tfjs.py (converts the trained .h5/.keras
+# model into the model.json + weight-shard format the frontend loads with
+# @tensorflow/tfjs). Not required just to train.
+tensorflowjs>=4.17.0

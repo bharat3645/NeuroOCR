@@ -1,0 +1,4 @@
+# The shipped model (public/models/handwriting-model/*.bin) is ~1.2MB, so no
+# Git LFS is needed for it. If you retrain a much larger model and want to
+# track its weight shards with LFS instead, uncomment:
+# public/models/**/*.bin filter=lfs diff=lfs merge=lfs -text
